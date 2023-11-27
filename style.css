@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root {
+    --blue: hsl(223, 87%, 63%);
+
+    --pale-blue: hsl(223, 100%, 88%);
+    --light-red: hsl(354, 100%, 66%);
+
+    --gray: hsl(0, 0%, 59%);
+    --very-dark-blue: hsl(209, 33%, 12%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, main, picture, .social-icons, .form-container {
+    display: grid;
+}
+body {
+    justify-items: center;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.25rem;
+}
+
+main {
+    min-width: 320px;
+    max-width: 768px;
+    margin: 2rem;
+    justify-items: center;
+    & #ping-logo {
+        margin-bottom: 2.25rem;
+    }
+    & .launch {
+        color: var(--gray);
+        margin-bottom: 1.25rem;
+    }
+    & .subscribe {
+        font-size: 0.7rem;
+        margin-bottom: 2.25rem;
+    }
+    & .form-container {
+    width: 100%;
+    }
+    & #email {
+        width: 100%;
+        padding: 0.7rem 1.75rem;
+        border-radius: 50px;
+        border: 1px solid var(--pale-blue);
+    }
+    & .alert {
+        margin-top: 0.5rem;
+        font-size: 0.75rem;
+        color: var(--light-red);
+    }
+    & button {
+        width: 100%;
+        padding: 0.7rem 1.75rem;
+        border-radius: 50px;
+        background-color: var(--blue);
+        border: 1px solid var(--pale-blue);
+        color: #ffffff;
+        font-weight: 500;
+        margin-top: 0.75rem;
+        margin-bottom: 4rem;
+    }
+    & .copyright {
+        font-size: 0.7rem;
+    }
+}
+span {
+    font-weight: 700;
+    color: var(--very-dark-blue);
+}
+::placeholder {
+    color: var(--pale-blue);
+    opacity: 0.75;
+}
+
+
+picture {
+    justify-items: center;
+    & .dashboard {
+        width: 100%;
+        margin-bottom: 8rem;
+    }
+}
+.social-icons {
+    grid-template-columns: auto auto auto;
+    column-gap: 1rem;
+    margin-bottom: 2rem;
+}
+.fa {
+    border: 1px solid var(--blue);
+    border-radius: 50px;
+    font-size: 1rem;
+    padding: 0.5em 0.75em;
+    text-align: center;
+    text-decoration: none;
+  }
+
+@media only screen and (min-width: 983px) {
+   #email {
+   grid-area: email;
+   }
+   .alert {
+   grid-area:alert;
+   }
+   button {
+   grid-area: btn;
+   margin-top: 0 !important;
+   margin-bottom: 0 !important;
+   }
+   .form-container {
+   justify-items: center;
+   grid-template-areas:
+   'email btn'
+   'alert .';
+   grid-template-columns: 80% 20%;
+   grid-template-rows: 2rem auto;
+  }
+}
